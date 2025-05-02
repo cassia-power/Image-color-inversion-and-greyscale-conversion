@@ -109,6 +109,7 @@
             const originalImage = document.getElementById('originalImage');
             const invertedImage = document.getElementById('invertedImage');
             const grayscaleImage = document.getElementById('grayscaleImage');
+            const combinedImage = document.getElementById('combinedImage');
             
             fileInput.addEventListener('change', function(e) {
                 const file = e.target.files[0];
@@ -140,6 +141,8 @@
                         
                         // Process and display grayscale image
                         grayscaleImage.src = convertToGrayscale(img);
+
+                        combinedImage.src = convertToGrayscale(invertedImage);
                         
                         // Show results
                         imageResults.classList.remove('hidden');
